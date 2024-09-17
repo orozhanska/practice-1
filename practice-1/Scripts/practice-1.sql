@@ -28,7 +28,6 @@ create table accounts(
 );
 
 
-drop table bank_fees;
 create table bank_fees(
 	fee_id INT AUTO_INCREMENT PRIMARY KEY,
 	bin_6 VARCHAR(6),
@@ -49,8 +48,8 @@ create table transactions(
 create table tr_states(
 	transaction_id INT,
 	state VARCHAR(50),
-	foreign key (transaction_id) references transactions(transaction_id);
-)
+	foreign key (transaction_id) references transactions(transaction_id)
+);
 
 INSERT INTO clients (first_name, last_name, address, risk_level) 
 VALUES
@@ -151,21 +150,21 @@ VALUES
     
 INSERT INTO tr_states (transaction_id, state) 
 VALUES
-	(46, 'completed'),
-	(47, 'completed'),
-	(48, 'rejected'),
-	(49, 'completed'),
-	(50, 'failed'),
-	(51, 'completed'),
-	(52, 'completed'),
-	(53, 'completed'),
-	(54, 'failed'),
-	(55, 'approved'),
-	(56, 'pending'),
-	(57, 'completed'),
-	(58, 'failed'),
-	(59, 'completed'),
-	(60, 'rejected');
+	(1, 'completed'),
+	(2, 'completed'),
+	(3, 'rejected'),
+	(4, 'completed'),
+	(5, 'failed'),
+	(6, 'completed'),
+	(7, 'completed'),
+	(8, 'completed'),
+	(9, 'failed'),
+	(10, 'approved'),
+	(11, 'pending'),
+	(12, 'completed'),
+	(13, 'failed'),
+	(14, 'completed'),
+	(15, 'rejected');
 
 select * from transactions
 limit 100;
@@ -276,4 +275,3 @@ create table totals as
 );
 
 select * from totals limit 100;
-
